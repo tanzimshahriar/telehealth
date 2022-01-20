@@ -9,7 +9,7 @@ module.exports = {
       './plugins/**/*.{js,ts}',
       './nuxt.config.{js,ts}'
     ],
-    safelist: ["aos-init", "aos-animate", "data-aos-duration", "data-aos-delay", "fade-up", "slide-left", "zoom-out", "bg-darkthree", "shadow-2xl", "btn-active", "hidden"],
+    safelist: ["aos-init", "aos-animate", "data-aos-duration", "data-aos-delay", "fade-up", "fade-left", "zoom-out", "bg-darkthree", "shadow-2xl", "btn-active", "hidden"],
     options: {
       keyframes: true,
     }

@@ -23,7 +23,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/apollo-overrides',
+    { src: '~/plugins/apollo-overrides' },
+    { src: "@/plugins/aos.client.js", mode: "client", ssr: false },
   ],
 
   apollo: {
@@ -57,7 +58,7 @@ export default {
   ],
 
   env: {
-    IMAGE_URL: process.env.CLOUDINARY_URL || "http://localhost:1337",
+    IMAGE_URL: process.env.NODE_ENV==='production'? '': "http://localhost:1337",
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
