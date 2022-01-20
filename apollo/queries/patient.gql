@@ -1,5 +1,5 @@
-query getPatientBySlug($slug: String!) {
-  patients(filters: { slug: { eq: $slug } }) {
+query getPatientByID($id: ID!) {
+  patients(filters: { id: { eq: $id } }) {
     data {
       attributes {
         FirstName

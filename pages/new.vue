@@ -4,11 +4,13 @@
     <h1 class="text-lg xl:text-2xl pb-4">Basic Information</h1>
 
     <!--Basic info Container-->
-    <div class="flex flex-col-reverse md:flex-row bg-gray-100 items-start">
-      <div class="p-3 md:p-6 grid grid-cols-12 gap-y-4 gap-x-8 flex-grow">
-        <div
-          class="text-sm font-medium col-span-12 sm:col-span-6 xl:col-span-4"
-        >
+    <div
+      class="flex items-center flex-col-reverse md:flex-row bg-gray-100 md:items-start"
+    >
+      <div
+        class="p-3 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-8 flex-grow w-full"
+      >
+        <div class="text-sm font-medium sm:col-span-6 xl:col-span-4">
           <div>First Name<span class="text-red-500">*</span></div>
 
           <input
@@ -21,16 +23,12 @@
           </div>
         </div>
 
-        <div
-          class="text-sm font-medium col-span-12 sm:col-span-6 xl:col-span-4"
-        >
+        <div class="text-sm font-medium sm:col-span-6 xl:col-span-4">
           <div>Middle Name</div>
           <input class="rounded-md px-2 border h-10 w-full" v-model="m_name" />
         </div>
 
-        <div
-          class="text-sm font-medium col-span-12 sm:col-span-6 xl:col-span-4"
-        >
+        <div class="text-sm font-medium sm:col-span-6 xl:col-span-4">
           <div>Last Name<span class="text-red-500">*</span></div>
           <input class="rounded-md px-2 border h-10 w-full" v-model="l_name" />
           <div v-if="l_name_error" class="text-[12px] text-red-500">
@@ -38,9 +36,7 @@
           </div>
         </div>
 
-        <div
-          class="text-sm font-medium col-span-12 sm:col-span-6 xl:col-span-4"
-        >
+        <div class="text-sm font-medium sm:col-span-6 xl:col-span-4">
           <div>Date of Birth<span class="text-red-500">*</span></div>
           <date-picker v-model="b_date" type="date"></date-picker>
           <div v-if="b_date_error" class="text-[12px] text-red-500">
@@ -48,7 +44,7 @@
           </div>
         </div>
 
-        <div class="col-span-12 sm:col-span-6 xl:col-span-4 font-medium">
+        <div class="sm:col-span-6 xl:col-span-4 font-medium">
           <div class="text-sm">Gender<span class="text-red-500">*</span></div>
           <select v-model="gender" class="rounded-md px-2 border h-10 w-full">
             <option value="Male">Male</option>
@@ -65,7 +61,7 @@
 
       <div class="flex flex-col items-center gap-2 p-6">
         <img
-          class="rounded-md h-[150px] w-[150px] xl:w-[200px] xl:h-[200px]"
+          class="rounded-md h-[150px] w-[150px] xl:w-[200px] xl:h-[200px] flex-grow"
           :src="pic ? pic : require('~/assets/default.png')"
         />
         <button
@@ -86,26 +82,28 @@
 
     <!--Address-->
     <h1 class="text-lg xl:text-2xl py-4">Address</h1>
-    <div class="bg-gray-100 p-3 md:p-6 grid grid-cols-12 gap-y-4 gap-x-8">
-      <div class="text-sm font-medium col-span-12 lg:col-span-6">
+    <div
+      class="bg-gray-100 p-3 md:p-6 grid-cols-1 grid md:grid-cols-12 gap-y-4 gap-x-8"
+    >
+      <div class="text-sm font-medium col-span-6">
         <div>Address Line 1<span class="text-red-500">*</span></div>
         <input class="rounded-md px-2 border h-10 w-full" v-model="address_1" />
         <div v-if="address_1_error" class="text-[12px] text-red-500">
           Address is required
         </div>
       </div>
-      <div class="text-sm font-medium col-span-12 lg:col-span-6">
+      <div class="text-sm font-medium col-span-6">
         <div>Address Line 2</div>
         <input class="rounded-md px-2 border h-10 w-full" v-model="address_2" />
       </div>
-      <div class="text-sm font-medium col-span-12 sm:col-span-6 md:col-span-4">
+      <div class="text-sm font-medium col-span-6 lg:col-span-4">
         <div>City<span class="text-red-500">*</span></div>
         <input class="rounded-md px-2 border h-10 w-full" v-model="city" />
         <div v-if="city_error" class="text-[12px] text-red-500">
           city is required
         </div>
       </div>
-      <div class="text-sm font-medium col-span-12 sm:col-span-6 md:col-span-4">
+      <div class="text-sm font-medium col-span-6 lg:col-span-4">
         <div>Postcode<span class="text-red-500">*</span></div>
         <input class="rounded-md px-2 border h-10 w-full" v-model="postcode" />
         <div v-if="postcode_error" class="text-[12px] text-red-500">
@@ -116,22 +114,24 @@
 
     <!--Contact-->
     <h1 class="text-lg xl:text-2xl py-4">Contact</h1>
-    <div class="bg-gray-100 p-3 md:p-6 grid grid-cols-12 gap-y-4 gap-x-8">
-      <div class="text-sm font-medium col-span-12 sm:col-span-6 md:col-span-4">
+    <div
+      class="bg-gray-100 p-3 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-8"
+    >
+      <div class="text-sm font-medium sm:col-span-6 md:col-span-4">
         <div>Phone<span class="text-red-500">*</span></div>
         <input class="rounded-md px-2 border h-10 w-full" v-model="phone" />
         <div v-if="phone_error" class="text-[12px] text-red-500">
-          phone is required
+          10 digits australian phone required
         </div>
       </div>
-      <div class="text-sm font-medium col-span-12 sm:col-span-6 md:col-span-4">
+      <div class="text-sm font-medium sm:col-span-6 md:col-span-4">
         <div>Email<span class="text-red-500">*</span></div>
         <input class="rounded-md px-2 border h-10 w-full" v-model="email" />
         <div v-if="email_error" class="text-[12px] text-red-500">
           email is required
         </div>
       </div>
-      <div class="text-sm font-medium col-span-12 sm:col-span-6 md:col-span-4">
+      <div class="text-sm font-medium sm:col-span-6 md:col-span-4">
         <div>Emergency Contact<span class="text-red-500">*</span></div>
         <input
           class="rounded-md px-2 border h-10 w-full"
@@ -141,7 +141,7 @@
           emergency contact is required
         </div>
       </div>
-      <div class="text-sm font-medium col-span-12 sm:col-span-6 md:col-span-4">
+      <div class="text-sm font-medium sm:col-span-6 md:col-span-4">
         <div>Emergency Contact Phone<span class="text-red-500">*</span></div>
         <input
           class="rounded-md px-2 border h-10 w-full"
@@ -151,11 +151,12 @@
           v-if="emergency_contact_phone_error"
           class="text-[12px] text-red-500"
         >
-          emergency contact phone is required
+          10 digits australian phone required
         </div>
       </div>
     </div>
 
+    <!--Save and cancel button-->
     <div class="flex justify-end py-4 gap-3">
       <nuxt-link
         aria-label="save"
@@ -183,7 +184,6 @@
   </div>
 </template>
 <script>
-
 import createPatient from "~/apollo/mutations/patient";
 import uploadFile from "~/apollo/mutations/upload";
 import DatePicker from "vue2-datepicker";
@@ -267,6 +267,8 @@ export default {
       this.saving = true;
       let errors = 0;
 
+      const rx = /^(\+61|0)\d{9}$/;
+
       if (!this.f_name || this.f_name === "") {
         console.log("f_name");
         errors++;
@@ -299,12 +301,11 @@ export default {
         errors++;
         this.postcode_error = true;
       } else this.postcode_error = false;
-      if (!this.phone || this.phone === "") {
+      if (!this.phone || this.phone === "" || !rx.test(this.phone)) {
         errors++;
         this.phone_error = true;
       } else this.phone_error = false;
       if (!this.email || this.email === "") {
-        console.log("emaoil");
         errors++;
         this.email_error = true;
       } else this.email_error = false;
@@ -314,7 +315,8 @@ export default {
       } else this.emergency_contact_error = false;
       if (
         !this.emergency_contact_phone ||
-        this.emergency_contact_phone === ""
+        this.emergency_contact_phone === "" ||
+        !rx.test(this.emergency_contact_phone)
       ) {
         errors++;
         this.emergency_contact_phone_error = true;
@@ -349,9 +351,6 @@ export default {
           },
         })
         .then((res) => {
-          //this.saving = false;
-          console.log("firstres:", res);
-
           //send apollo request to upload file
           if (this.pic && this.file) {
             this.$apollo
@@ -365,10 +364,32 @@ export default {
                 },
               })
               .then((response) => {
-                console.log("uploadFile", response);
               });
           }
           this.saving = false;
+
+          // set data to null/initial state so unsaved data will be lost warning isnt shown
+          this.f_name = "";
+          this.m_name = "";
+          this.l_name = "";
+          this.email = "";
+          this.b_date = "";
+          this.address_1 = "";
+          this.address_2 = "";
+          this.city = "";
+          this.postcode = "";
+          this.phone = "";
+          this.gender = null;
+          this.pic = null;
+          this.file = null;
+          this.emergency_contact = "";
+          this.emergency_contact_error = false;
+          this.emergency_contact_phone = "";
+          this.emergency_contact_phone_error = false;
+
+          this.$router.push({
+            path: `/patient/${res.data.createPatient.data.id}`,
+          });
         });
     },
   },
@@ -403,6 +424,7 @@ export default {
 <style lang="scss">
 .mx-datepicker {
   width: 100%;
+
   .mx-input-wrapper {
     input {
       @apply border-gray-200;

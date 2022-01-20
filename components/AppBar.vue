@@ -1,13 +1,13 @@
 <template>
-  <div class="flex items-end justify-end pt-6 px-6 md:px-12 lg:px-16 xl:px-32" :class="$route.path==='/new'? 'justify-between' : ''">
+  <div class="flex items-end justify-start pt-6 px-6 md:px-12 lg:px-16 xl:px-32">
     <!--Back navigation-->
     <nuxt-link
-        aria-label="back"
-        v-if="$route.path === '/new'"
+        aria-label="home"
+        v-if="$route.path === '/new' || $route.path.includes('/patient')"
         to="/"
         class="flex items-center text-blue-600 py-2 px-3"
         ><fa class="block mr-2" :icon="faArrowLeft" />Back
-      </nuxt-link>
+    </nuxt-link>
 
   </div>
 </template>
