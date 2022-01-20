@@ -54,8 +54,6 @@
         <!--Each Patient-->
         <nuxt-link
           v-for="(p, i) in search && search !== '' ? searchResults : patients"
-          data-aos="fade-left"
-          :data-aos-delay="i * 50"
           :to="`/patient/${p.id}`"
           :key="i"
           class="shadow-lg text-sm 3xl:text-lg flex flex-col items-start p-4 col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-gray-100 rounded-md hover:shadow-2xl transform transition duration-200 ease-in-out cursor-pointer"
