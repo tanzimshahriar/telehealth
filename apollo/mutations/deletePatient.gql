@@ -1,0 +1,11 @@
+mutation deletePatient($id:ID!){
+  deletePatient(id: $id){
+    data{
+		attributes {
+      FirstName
+      MiddleName
+      LastName
+    } 
+    }
+  }
+}

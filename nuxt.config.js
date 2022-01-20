@@ -23,13 +23,14 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/apollo-overrides',
   ],
 
   apollo: {
     clientConfigs: {
       default: {
         httpEndpoint: process.env.BACKEND_URL || "http://localhost:1337/graphql",
-        //fetchPolicy: 'network-only'
+        // fetchPolicy: 'no-cache',
       },
     },
     errorHandler: "~/apollo/error-handler.js",
@@ -56,7 +57,7 @@ export default {
   ],
 
   env: {
-    IMAGE_URL: "http://localhost:1337",
+    IMAGE_URL: process.env.CLOUDINARY_URL || "http://localhost:1337",
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
