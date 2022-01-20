@@ -1,0 +1,30 @@
+query getPatientBySlug($slug: String!) {
+  patients(filters: { slug: { eq: $slug } }) {
+    data {
+      attributes {
+        FirstName
+        MiddleName
+        LastName
+        Birthday
+        Gender
+        Picture {
+          data {
+            attributes {
+              url
+              alternativeText
+              formats
+            }
+          }
+        }
+        AddressLine1
+        AddressLine2
+        City
+        Postcode
+        Phone
+        Email
+        EmergencyContact
+        EmergencyContactPhone
+      }
+    }
+  }
+}

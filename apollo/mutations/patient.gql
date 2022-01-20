@@ -1,0 +1,37 @@
+mutation addMessage(
+  $FirstName: String!
+  $MiddleName: String
+  $LastName: String!
+  $Birthday: Date!
+  $Gender: ENUM_PATIENT_GENDER!
+  $AddressLine1: String!
+  $AddressLine2: String
+  $City: String!
+  $Postcode: String!
+  $Email: String!
+  $Phone: String!
+  $EmergencyContact: String!
+  $EmergencyContactPhone: String!
+) {
+  createPatient(
+    data: {
+      FirstName: $FirstName
+      MiddleName: $MiddleName
+      LastName: $LastName
+      Birthday: $Birthday
+      Gender: $Gender
+      AddressLine1: $AddressLine1
+      AddressLine2: $AddressLine2
+      City: $City
+      Postcode: $Postcode
+      Email: $Email
+      Phone: $Phone
+      EmergencyContact: $EmergencyContact
+      EmergencyContactPhone: $EmergencyContactPhone
+    }
+  ) {
+    data {
+      id
+    }
+  }
+}
