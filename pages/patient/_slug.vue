@@ -120,7 +120,7 @@
 
         <div class="flex flex-col items-center gap-2 p-6">
           <img
-            class="rounded-md h-[150px] w-[150px] xl:w-[200px] xl:h-[200px]"
+            class="object-cover rounded-md h-[150px] w-[150px] xl:w-[200px] xl:h-[200px]"
             :src="
               newPatient.Picture &&
               newPatient.Picture.data &&

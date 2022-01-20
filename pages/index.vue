@@ -54,6 +54,8 @@
         <!--Each Patient-->
         <nuxt-link
           v-for="(p, i) in search && search !== '' ? searchResults : patients"
+          data-aos="fade-left"
+          :data-aos-delay="i * 50"
           :to="`/patient/${p.id}`"
           :key="i"
           class="shadow-lg text-sm 3xl:text-lg flex flex-col items-start p-4 col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-gray-100 rounded-md hover:shadow-2xl transform transition duration-200 ease-in-out cursor-pointer"
@@ -61,7 +63,7 @@
           <!--Row-->
           <div class="flex w-full gap-2 lg:gap-4">
             <img
-              class="h-[80px] w-[80px] lg:w-[100px] lg:h-[100px] 3xl:h-[130px] 3xl:w-[130px] 4xl:h-[140px] 4xl:w-[140px] 5xl:h-[150px] 5xl:w-[150px]"
+              class="object-cover h-[80px] w-[80px] lg:w-[100px] lg:h-[100px] 3xl:h-[130px] 3xl:w-[130px] 4xl:h-[140px] 4xl:w-[140px] 5xl:h-[150px] 5xl:w-[150px]"
               v-if="
                 p.attributes.Picture &&
                 p.attributes.Picture.data &&
@@ -74,7 +76,7 @@
               :alt="p.attributes.FirstName + ' image'"
             />
             <img
-              class="h-[80px] w-[80px] lg:w-[100px] lg:h-[100px] 3xl:h-[130px] 3xl:w-[130px] 4xl:h-[140px] 4xl:w-[140px] 5xl:h-[150px] 5xl:w-[150px]"
+              class="object-cover h-[80px] w-[80px] lg:w-[100px] lg:h-[100px] 3xl:h-[130px] 3xl:w-[130px] 4xl:h-[140px] 4xl:w-[140px] 5xl:h-[150px] 5xl:w-[150px]"
               v-else
               alt="default profile pic"
               :src="require('~/assets/default.png')"

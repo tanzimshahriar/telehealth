@@ -6,6 +6,7 @@
     <!--Basic info Container-->
     <div
       class="flex items-center flex-col-reverse md:flex-row bg-gray-100 md:items-start"
+      data-aos="fade-up"
     >
       <div
         class="p-3 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-8 flex-grow w-full"
@@ -61,7 +62,7 @@
 
       <div class="flex flex-col items-center gap-2 p-6">
         <img
-          class="rounded-md h-[150px] w-[150px] xl:w-[200px] xl:h-[200px] flex-grow"
+          class="object-cover rounded-md h-[150px] w-[150px] xl:w-[200px] xl:h-[200px] flex-grow"
           :src="pic ? pic : require('~/assets/default.png')"
         />
         <button
@@ -81,8 +82,9 @@
     </div>
 
     <!--Address-->
-    <h1 class="text-lg xl:text-2xl py-4">Address</h1>
+    <h1 class="text-lg xl:text-2xl py-4" data-aos="fade-up" data-aos-delay="50">Address</h1>
     <div
+      data-aos="fade-up" data-aos-delay="50"
       class="bg-gray-100 p-3 md:p-6 grid-cols-1 grid md:grid-cols-12 gap-y-4 gap-x-8"
     >
       <div class="text-sm font-medium col-span-6">
@@ -113,8 +115,9 @@
     </div>
 
     <!--Contact-->
-    <h1 class="text-lg xl:text-2xl py-4">Contact</h1>
+    <h1 data-aos="fade-up" data-aos-delay="100" class="text-lg xl:text-2xl py-4">Contact</h1>
     <div
+    data-aos="fade-up" data-aos-delay="100"
       class="bg-gray-100 p-3 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-8"
     >
       <div class="text-sm font-medium sm:col-span-6 md:col-span-4">
@@ -157,7 +160,9 @@
     </div>
 
     <!--Save and cancel button-->
-    <div class="flex justify-end py-4 gap-3">
+    <div class="flex justify-end py-4 gap-3"
+    data-aos="fade-left"
+    >
       <nuxt-link
         aria-label="save"
         to="/"
