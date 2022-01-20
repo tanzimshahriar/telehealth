@@ -7,7 +7,7 @@ export default ({ app }) => {
         // offset: 200,
         
         duration: 300,
-        easing: 'ease-in-cubic',
+        easing: 'ease-in-out',
         once: false
     }); // or any other options you need
 };
